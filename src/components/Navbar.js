@@ -7,7 +7,7 @@ const Navbar = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
 
-                <div class="w-full navbar bg-base-300">
+                <div class="w-full navbar bg-base-100 px-20">
                     <div class="flex-1 px-2 mx-2">Clean & Co.</div>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -23,6 +23,13 @@ const Navbar = ({ children }) => {
                             <li><NavLink to='/services' className='rounded-lg'>Services</NavLink></li>
                             <li><NavLink to='/contact' className='rounded-lg'>Contact</NavLink></li>
                             <li><NavLink to='/login' className='rounded-lg'>Login</NavLink></li>
+                            <li class="dropdown dropdown-hover dropdown-end">
+                                <label tabindex="0" class="btn btn-primary btn-outline m-1 rounded-lg">Book Now</label>
+                                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li><a>Book1</a></li>
+                                    <li><a>Book2</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -32,11 +39,18 @@ const Navbar = ({ children }) => {
                 <label for="my-drawer-3" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
 
-                <li><NavLink to='/' className='rounded-lg'>Home</NavLink></li>
-                            <li><NavLink to='/about' className='rounded-lg'>About</NavLink></li>
-                            <li><NavLink to='/services' className='rounded-lg'>Services</NavLink></li>
-                            <li><NavLink to='/contact' className='rounded-lg'>Contact</NavLink></li>
-                            <li><NavLink to='/login' className='rounded-lg'>Login</NavLink></li>
+                    <li><NavLink to='/' className='rounded-lg'>Home</NavLink></li>
+                    <li><NavLink to='/about' className='rounded-lg'>About</NavLink></li>
+                    <li><NavLink to='/services' className='rounded-lg'>Services</NavLink></li>
+                    <li><NavLink to='/contact' className='rounded-lg'>Contact</NavLink></li>
+                    <li><NavLink to='/login' className='rounded-lg'>Login</NavLink></li>
+                    <li class="dropdown dropdown-hover dropdown-end">
+                        <label tabindex="0" class="btn btn-primary btn-outline m-1 rounded-lg">Book Now</label>
+                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Book1</a></li>
+                            <li><a>Book2</a></li>
+                        </ul>
+                    </li>
 
                 </ul>
 
