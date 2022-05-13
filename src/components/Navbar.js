@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ children }) => {
     return (
@@ -17,11 +18,11 @@ const Navbar = ({ children }) => {
                     <div class="flex-none hidden lg:block">
                         <ul class="menu menu-horizontal">
 
-                            <li><a className='rounded-lg'>Home</a></li>
-                            <li><a className='rounded-lg'>About</a></li>
-                            <li><a className='rounded-lg'>Services</a></li>
-                            <li><a className='rounded-lg'>Contact</a></li>
-                            <li><a className='rounded-lg'>Login</a></li>
+                            <li><Link to='/' className='rounded-lg'>Home</Link></li>
+                            <li><Link to='/about' className='rounded-lg'>About</Link></li>
+                            <li><Link to='/services' className='rounded-lg'>Services</Link></li>
+                            <li><Link to='/contact' className='rounded-lg'>Contact</Link></li>
+                            <li><Link to='/login' className='rounded-lg'>Login</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -31,11 +32,11 @@ const Navbar = ({ children }) => {
                 <label for="my-drawer-3" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
 
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Services</a></li>
-                    <li><a>Contact</a></li>
-                    <li><a>Login</a></li>
+                <li><Link to='/' className='rounded-lg'>Home</Link></li>
+                            <li><Link to='/about' className='rounded-lg'>About</Link></li>
+                            <li><Link to='/services' className='rounded-lg'>Services</Link></li>
+                            <li><Link to='/contact' className='rounded-lg'>Contact</Link></li>
+                            <li><Link to='/login' className='rounded-lg'>Login</Link></li>
 
                 </ul>
 
