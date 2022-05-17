@@ -9,6 +9,8 @@ import { useEffect } from 'react';
 import PrivetRoute from './Authentication/PrivetRoute';
 // import About from './Pages/About';
 import { privateRoutes } from './routes/privateRoutes'
+import AdminRoute from './Authentication/AdminRoute';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 
 function App() {
@@ -28,11 +30,13 @@ function App() {
           }
           <Route element={<PrivetRoute />}>
             {
-
               privateRoutes.map(({ path, Component }, index) => (
                 <Route key={index} path={path} element={<Component />}></Route>
               ))
             }
+          </Route>
+          <Route element={<AdminRoute></AdminRoute>}>
+            <Route path='/dashboard' element={<Dashboard/>}></Route>
           </Route>
         </Routes>
       </Navbar>
