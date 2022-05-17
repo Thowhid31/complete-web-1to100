@@ -5,9 +5,10 @@ import { publicRoute } from "./routes/publicRoute"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import Services from './Pages/Services'
+// import Services from './Pages/Services'
 import PrivetRoute from './Authentication/PrivetRoute';
-import About from './Pages/About';
+// import About from './Pages/About';
+import { privateRoutes } from './routes/privateRoutes'
 
 
 function App() {
@@ -20,20 +21,18 @@ function App() {
     <div>
       <Navbar>
         <Routes>
-          {/* <Route path='/' element={<Home/>}></Route>
-       <Route path='/about' element={<About/>}></Route>
-       <Route path='/services' element={<Services/>}></Route>
-       <Route path='/contact' element={<Contact/>}></Route>
-       <Route path='/login' element={<Login/>}></Route> */}
           {
             publicRoute.map(({ path, Component }, index) => (
               <Route key={index} path={path} element={<Component />}></Route>
             ))
           }
-          {/* <Route path='/services' element={<PrivetRoute><Services/></PrivetRoute>}/> */}
-          <Route element={ <PrivetRoute/> }>
-            <Route path='/services' element={<Services/>}></Route>
-            <Route path='/about' element={<About/>}></Route>
+          <Route element={<PrivetRoute />}>
+            {
+
+              privateRoutes.map(({ path, Component }, index) => (
+                <Route key={index} path={path} element={<Component />}></Route>
+              ))
+            }
           </Route>
         </Routes>
       </Navbar>
