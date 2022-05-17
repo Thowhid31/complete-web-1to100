@@ -24,6 +24,8 @@ const Login = () => {
         <div class="form-control mt-6">
           <button class="btn btn-primary">Login</button>
         </div>
+        <div class="divider">OR</div>
+        <button className='btn btn-glass hover:btn-accent'>Log in With GOOGLE</button>
     </div>
   </div>
 </div>
