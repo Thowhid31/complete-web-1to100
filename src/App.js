@@ -11,6 +11,8 @@ import PrivetRoute from './Authentication/PrivetRoute';
 import { privateRoutes } from './routes/privateRoutes'
 import AdminRoute from './Authentication/AdminRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import AddAdmin from './Pages/Dashboard/AddAdmin'
+import AddService from './Pages/Dashboard/AddService'
 
 
 function App() {
@@ -36,7 +38,10 @@ function App() {
             }
           </Route>
           <Route element={<AdminRoute></AdminRoute>}>
-            <Route path='/dashboard' element={<Dashboard/>}></Route>
+            <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+              <Route path='add-admin' element={<AddAdmin />} />
+              <Route path='add-service' element={<AddService />} />
+            </Route>
           </Route>
         </Routes>
       </Navbar>
