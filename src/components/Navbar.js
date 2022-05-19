@@ -76,7 +76,7 @@ const Navbar = ({ children }) => {
                         </div>
                         <div class="collapse-content">
                             <li><NavLink to='/contact' className='rounded-lg'>Quick Book</NavLink></li>
-                            <li><NavLink to='/login' className='rounded-lg'>Pree-book</NavLink>
+                            <li><NavLink to='/login' className='rounded-lg'>Pre-book</NavLink>
                             </li>
                         </div>
                     </div>

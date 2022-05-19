@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 const PrivetRoute = () => {
-    const user = false;
+    const user = true;
     const location = useLocation();
 
     if (!user) {
