@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-// import facther from '../../api';
+import facther from '../../api';
 
 
 const AddService = () => {
@@ -10,7 +10,13 @@ const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = async (data) => {
-        // const res = await facther.post('add-service', data);
+
+        const serviceData = {
+            ...data,
+            image : imageURL,
+        }
+
+        const res = await facther.post('add-service', serviceData);
         console.log(data);
         reset()
 
