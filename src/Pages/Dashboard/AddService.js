@@ -17,8 +17,9 @@ const AddService = () => {
         }
 
         const res = await facther.post('add-service', serviceData);
-        console.log(data);
-        reset()
+        console.log(res);
+        reset();
+        setImageURL('');
 
     }
 
