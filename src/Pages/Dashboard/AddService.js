@@ -1,16 +1,34 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import facther from '../../api';
+// import facther from '../../api';
+
 
 const AddService = () => {
+    const [imageURL, setImageURL] = useState('');
+    console.log(imageURL);
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = async (data) => {
-        const res = await facther.post('add-service', data);
-        console.log(res);
+        // const res = await facther.post('add-service', data);
+        console.log(data);
         reset()
 
     }
+
+    const handleUploadImage = event => {
+        const image = event.target.files[0];
+
+        const formData = new FormData();
+        formData.set("image", image);
+        axios.post("https://api.imgbb.com/1/upload?key=a5113089964d5e5d5c59a49191f9efa6", formData)
+        .then(res => {
+            setImageURL(res.data.data.display_url)
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    };
 
     return (
         <div className='h-screen w-full flex justify-center items-center bg-accent'>
@@ -36,6 +54,15 @@ const AddService = () => {
                         </label>
                         <input type="text" class="input input-bordered" 
                         {...register("serviceCharge")}
+                        />
+                        
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Image</span>
+                        </label>
+                        <input type="file" class="input input-bordered" onChange={handleUploadImage} 
+                        
                         />
                         
                     </div>
